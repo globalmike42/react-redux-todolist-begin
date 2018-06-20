@@ -14,9 +14,8 @@ export default function listReducer(state = initialState, action) {
       return  state.push(newList);
     case 'UPDATE':
       return state.set(action.payload.index, action.payload.toDo);
-    case 'DELETE_TODO':
-         
-       return state.setIn([action.payload.index,'toDo'], state.getIn([action.payload.index,'toDo']).filter((element,index) => index !== action.payload.toDoItem));
+    case 'DELETE_TODO':  
+      return state.setIn([action.payload.index,'toDo'], state.getIn([action.payload.index,'toDo']).filter((element,index) => index !== action.payload.toDoItem));
     default:
         return state    
           
